@@ -25,21 +25,21 @@
 
         return {
             set: function (value) {
-                if (value && !isNaN(value)) {
+                if (!isNaN(value)) {
                     updateTotal(parseInt(value, 10));
                 }
 
                 return this;
             },
             add: function (value) {
-                value = (value && !isNaN(value)) ? total + parseInt(value, 10) : total + 1;
+                value = (!isNaN(value)) ? total + parseInt(value, 10) : total + 1;
 
                 updateTotal(value);
 
                 return this;
             },
             sub: function (value) {
-                value = (value && !isNaN(value)) ? total - parseInt(value, 10) : total - 1;
+                value = (!isNaN(value)) ? total - parseInt(value, 10) : total - 1;
 
                 updateTotal(value);
 
